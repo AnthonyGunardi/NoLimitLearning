@@ -1,0 +1,47 @@
+import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
+import './CSS/Cart.css';
+import Rating from '../CoursePage/Rating';
+class CartCard extends Component{
+    state={ alert: {
+        valid:false,
+        msg:"",
+        alertType:" ",
+    },
+}
+    render(){
+    return(
+    <div className="CartContent">
+       
+            <div className="CardMain ">
+                <Link className="productLink" to={this.props.Link}>
+                    <div className="CardImageParent">
+                        <img src={this.props.img} alt="course"/>
+                    </div>
+                </Link>
+                    <div className="CardSideContent">
+                            <p className="CourseTitle">{this.props.title}</p>
+                            <div className="CardParent1">
+                                <p className="CourseTeacher">By {this.props.teacher}</p>
+                                <p onClick={this.props.remove} className="CourseRemove">Remove</p>
+                            </div>
+                            <Link className="productLink"  to={this.props.Link}>
+                                <div className="CardParent2"> 
+                                  
+                                        <span className="CourseRating">{this.props.rating}</span>  
+                                        <span className="Coursestar">
+                                            <Rating 
+                                                rating={this.props.rating}
+                                                edit={false}/>
+                                        </span> 
+                                   
+                                  
+                                        <p className="CourseSave">Go to Topic</p>
+                                 
+                                </div>   </Link>
+                    </div>
+            </div>
+    </div>
+    );
+}}
+export default CartCard;
