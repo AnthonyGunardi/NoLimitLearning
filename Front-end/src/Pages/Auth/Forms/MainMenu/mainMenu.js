@@ -9,7 +9,7 @@ import MainPage from '../../../../components/UI/MainPage/MainPage';
 import SpinnerButton from '../../../../components/UI/Spinners/SpinnerButton';
 import SumbitButton from '../../../../components/UI/Buttons/SumbitButton';
 import Alert from '../alert';
-class Signup extends Component {
+class MainMenu extends Component {
     state = { 
             Form:{
                  name: {
@@ -257,15 +257,20 @@ inputBlurHandler = (event,inputIdentifier)=> {
                 config:this.state.Form[key]
             });
         };
-        let SigninSumbitButton= <SumbitButton className={"Sumbit-btn"} Label={"Create Account"}/>;
+        let Menu1Button= <a className={"Sumbit-btn"} role="button" Label={"Learning"} href="/home/all">Learning</a> ;
+        let Menu2Button= <a className={"Sumbit-btn"} role="button" Label={"Challenge"} href="/home/all">Challenge</a> ;
+        let Menu3Button= <a className={"Sumbit-btn"} role="button" Label={"Assesment"} href="/home/all">Assesment</a> ;
+        
    
         if(this.state.loading){
-            SigninSumbitButton= <SpinnerButton spinnerclass={"Sumbit-btn"}/>;
+            Menu1Button= <SpinnerButton spinnerclass={"Sumbit-btn"}/>;
+            Menu2Button= <SpinnerButton spinnerclass={"Sumbit-btn"}/>;
+            Menu3Button= <SpinnerButton spinnerclass={"Sumbit-btn"}/>;
     }
         let form = (
-          <div className="login-form">
+          <div className="mainMenu">
               
-            <form onSubmit={this.formHandler} >
+            {/* <form onSubmit={this.formHandler} >
                 {
                     formElementsArray.map(x=> (
                       <Input 
@@ -280,13 +285,13 @@ inputBlurHandler = (event,inputIdentifier)=> {
                         blur={(event)=> this.inputBlurHandler(event,x.id)}
                         changed={(event)=> this.inputchangeHandler(event,x.id)}/>
                     ))
-                }
+                } */}
                
-                {SigninSumbitButton}
-              <p className="account-login"> Already have an account?  <Link to="/login"> 
-              Login</Link></p>
+                {Menu1Button}
+                {Menu2Button}
+                {Menu3Button}
                  
-            </form> 
+            {/* </form>  */}
             </div>
         );
         return (
@@ -304,4 +309,4 @@ inputBlurHandler = (event,inputIdentifier)=> {
     }
   
 }
-export default Signup;
+export default MainMenu;

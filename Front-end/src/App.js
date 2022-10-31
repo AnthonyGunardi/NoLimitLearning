@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {BrowserRouter} from 'react-router-dom';
 import Login from './Pages/Auth/Forms/Login/Login';
+import MainMenu from './Pages/Auth/Forms/MainMenu/mainMenu';
 import Signup from './Pages/Auth/Forms/Signup/Signup';
 import EmailVerify from './Pages/Auth/Forms/ForgotPassword/EmailVerify';
 import ForgotPasswordotp from './Pages/Auth/Forms/ForgotPassword/ForgotPassOtp';
@@ -21,6 +22,7 @@ class App extends Component {
       <BrowserRouter >
     
         <Switch>
+        <Route path="/menu" exact component={MainMenu}/>
         <Route path="/signup" exact component={Signup}/>
         <Route path="/login" component={Login}/>
         <Route path="/signup/otp"  component={Otp}/>
@@ -40,7 +42,8 @@ class App extends Component {
           render={(props)=> <TeacherVideos {...props}/> }/>
         <Route path="/TeacherHome" component={TeacherHomePage}/>
         <Route path="/TeacherEdit" component={TeacherEdit}/>
-        <Redirect to="/home/all"/>
+        {/* <Redirect to="/home/all"/> */}
+        <Redirect to="/menu"/>
        </Switch>
   </BrowserRouter>
   
