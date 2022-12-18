@@ -36,10 +36,15 @@ const userSchema = new Schema({
             type:Schema.Types.ObjectId,
             required:false,
             ref:"Course",
-        }]
-    //Token:String,
-    //resetToken:String,
-    //resetTokenExpiration:Date,
+        }],
+    totalScore: {
+          type: Number,
+          default: 0
+      },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
     
 });
 module.exports = mongoose.model('Users',userSchema);

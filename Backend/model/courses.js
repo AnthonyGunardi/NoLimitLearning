@@ -59,7 +59,7 @@ const courseSchema = new Schema({
         ratingSum:{
             type:Number,
             required:false,
-            default:1
+            default:5
         },
         timesUpdated:{
             type:Number,
@@ -69,7 +69,7 @@ const courseSchema = new Schema({
         ratingFinal:{
             type:Number,
             require:false,
-            default:1
+            default:5
         }
     }
     },

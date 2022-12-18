@@ -38,6 +38,10 @@ class AuthServices {
         userName= userName.charAt(0).toUpperCase() + userName.slice(1);
         return userName;
     }
+    getUserId(){
+      let userId=localStorage.getItem('userId');
+      return userId;
+    }
     
     //   ----------------------- end of auth routes --------------------
     AllCourses(){

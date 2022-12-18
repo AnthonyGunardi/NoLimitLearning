@@ -1,7 +1,6 @@
 const express = require('express');
 const router= express.Router();
-const courseController =require('../controllers/coursepage');
-const Auth = require('../Authentication/is-auth');
+const userController =require('../controllers/user');
 
 router.get('/course/:courseName/:courseId',Auth.authentication,courseController.CoursePage);
 router.post('/home/:courseId/:courseName',Auth.authentication,courseController.Bookmark);

@@ -16,6 +16,8 @@ import TeacherHomePage from './Pages/Teacher/TeacherHomepage/TeacherHomepage';
 import TeacherEdit from './Pages/Teacher/TeacherHomepage/TeacherEdit';
 import CoursePage from './Pages/CoursePage/CoursePage';
 import Preference from './Pages/HomePage/Preference';
+import Challenge from './Pages/Challenge/Challenge';
+
 class App extends Component {
   render(){
     return (
@@ -29,6 +31,7 @@ class App extends Component {
         <Route path="/forgotpasswordemail"  component={ EmailVerify}/>
         <Route path='/ForgotPasswordotp' component={ForgotPasswordotp}/>
         <Route path="/ResetPassword" component= {ResetPassword}/>
+        <Route path="/challenge" exact component={Challenge}/>
         <Route path="/home/:CourseName" exact    render={props =>
         <Homepage key={props.location.pathname} {...props}/>}/>
         <Route path="/home/Interest/Preference" exact component={Preference}/>

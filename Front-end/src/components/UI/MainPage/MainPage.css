@@ -37,6 +37,8 @@
 }
 @media (max-width: 700px) {
   .Content-text {
-    display: none;
+    text-align: center;
+    font: normal normal 400 46px/66px Gilroy;
+    /* display: none; */
   }
 }
