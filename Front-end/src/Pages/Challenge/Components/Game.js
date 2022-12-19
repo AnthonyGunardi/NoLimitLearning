@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import AuthServices from '../../../ApiServices/auth.service';
+import axios from 'axios';
 
 const GameInput = styled.input`
   text-align: center;
@@ -79,6 +80,7 @@ class Game extends Component {
         }
       });
       if (bulls === 3) {
+        await axios.put('http://localhost:8080/points/:id/:score', { hello: 'world' });
         this.setState({
           gameWon: true
         });
