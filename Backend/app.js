@@ -10,6 +10,7 @@ const authRoutes = require('./routes/auth');
 const teacherRoutes=require('./routes/teacher')
 const homeRoutes= require('./routes/homepage')
 const courseRoutes=require('./routes/coursepage')
+const userRoutes=require('./routes/user')
 // const {addRoom,getUser} = require('./chat');
 const MONGODB_URI =api_key.mongo;
 const app = express();
@@ -28,6 +29,8 @@ app.use(authRoutes);
 app.use(teacherRoutes);
 app.use(homeRoutes);
 app.use(courseRoutes);
+app.use(userRoutes);
+
 if (process.env.NODE_ENV !== 'test') {
   mongoose
     .connect(MONGODB_URI,{ useUnifiedTopology: true,useNewUrlParser: true })

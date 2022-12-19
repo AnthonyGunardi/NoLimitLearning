@@ -1,13 +1,13 @@
-import User from '../model/user';
-
 const User = require('../model/user');
 
-export const updatePoint = async (req,res) => {
-  const { id } = req.query;
-  const { score } = req.query;    
-  if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No user with that id');       
+exports.updatePoint = async (req,res) => {
+  const { id } = req.params;
+  const { score } = req.params;    
+  // if(!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No user with that id');       
   try {
-      const updatedPoint = await User.findByIdAndUpdate(id, {totalScore: score}, { new: true });
+      const currentPointData = await User.findById(id)
+      let currentPoint= currentPointData.totalScore
+      const updatedPoint = await User.findByIdAndUpdate(id, {totalScore: parseInt(currentPoint) + parseInt(score)}, { new: true });
       // const creatorData = await User.findById(updatedPost.creator);
       // const creatorName = creatorData.name
       // const sumData = await PostMessage.aggregate([
