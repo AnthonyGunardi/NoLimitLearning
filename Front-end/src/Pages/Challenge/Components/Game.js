@@ -56,11 +56,12 @@ class Game extends Component {
     }
   };
   __checkAnswer = event => {
+    let userId= AuthServices.getUserId();
     event.preventDefault();
     const { guessNumber, secretNumber, attemptCount } = this.state;
     const re = /^\d{3}$/;
     if (re.test(guessNumber)) {
-      var secretArray = [],
+      let secretArray = [],
         guessArray = [],
         bulls = 0,
         cows = 0;
@@ -80,10 +81,12 @@ class Game extends Component {
         }
       });
       if (bulls === 3) {
-        await axios.put('http://localhost:8080/points/:id/:score', { hello: 'world' });
-        this.setState({
-          gameWon: true
-        });
+        axios.put(`http://localhost:8080/points/${userId}/50`)
+        .then(
+          this.setState({
+            gameWon: true
+          }))
+
       }
       if (attemptCount === this.props.numberOfAttemptsSelected) {
         this.setState({
@@ -107,7 +110,6 @@ class Game extends Component {
     }
   };
   render() {
-    let userId= AuthServices.getUserId();
     const { guessNumber, attempts, gameWon, gameLost, attemptCount } = this.state;
     let renderAttempted =
       attempts.length > 0
@@ -130,7 +132,7 @@ class Game extends Component {
     return (
       <div>
         {gameWon ? (
-          <WonText> WOOHOO! You won in just {attemptCount} attempts</WonText>
+          <WonText> You win! You won in just {attemptCount} attempts</WonText>
         ) : (
           gameLost ? <WonText> Oops! You lost</WonText> :
           <div>

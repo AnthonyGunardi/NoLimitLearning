@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const api_key = require('../config/config');
 exports.authentication= (req,res,next)=>{
    let access_token = req.headers['authorization'];
-   //console.log(access_token)
+   // console.log(access_token)
    if(!access_token){
       const error = new Error("not authenticated")
       error.statusCode=401;
