@@ -17,6 +17,7 @@ import TeacherEdit from './Pages/Teacher/TeacherHomepage/TeacherEdit';
 import CoursePage from './Pages/CoursePage/CoursePage';
 import Preference from './Pages/HomePage/Preference';
 import Challenge from './Pages/Challenge/Challenge';
+import Leaderboard from './Pages/Leaderboard/Leaderboard';
 
 class App extends Component {
   render(){
@@ -38,7 +39,7 @@ class App extends Component {
         <Route path="/course/:Course/:Courseid" exact    render={props =>
         <CoursePage key={props.location.pathname} {...props}/>}/>
         <Route path="/Cart" component={Cart}/>
-        
+        <Route path="/Leaderboard" component={Leaderboard}/>
         
         <Route path="/Teacher" component={TeacherPage}/>
           <Route path="/TeacherVideos" 

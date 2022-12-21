@@ -12,3 +12,14 @@ exports.updatePoint = async (req,res) => {
       res.status(409).json({message: error.message});
   }
 }
+
+exports.getUsers = async(req,res) => {
+  const { page } = req.query;
+  try {
+      const LIMIT = 10;
+      const users= await User.find({isAdmin: false}).sort({ totalScore: -1 }).limit(LIMIT);
+      res.status(200).json(users);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+};
