@@ -21,6 +21,7 @@ import { useDispatch } from 'react-redux';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import useStyles from "./styles";
 import { fetchUsers } from './api';
+import Footer from '../../components/UI/Footer/Footer';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -82,6 +83,7 @@ const Leaderboard = () => {
     }
 
     return (
+        <>
         <Grow in>
             <Container maxWidth='xl'>
                 <Grid className={classes.gridContainer} container justifyContent='space-between' alignItems='stretch' spacing={3}>
@@ -116,6 +118,8 @@ const Leaderboard = () => {
                 </Grid>
             </Container>
         </Grow>
+        <Footer/>
+        </>
     );
 }
 

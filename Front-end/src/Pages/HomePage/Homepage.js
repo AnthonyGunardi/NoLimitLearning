@@ -11,6 +11,8 @@ import Layout from '../../components/Layout/Layout'
 import Recommendation from './Recommendation';
 import './CSS/Homepage.css';
 import Url from '../../ApiServices/BackendUrl';
+import Footer from '../../components/UI/Footer/Footer';
+
 class Homepage extends Component {
     IsMounted=false;
     state = {
@@ -107,6 +109,7 @@ class Homepage extends Component {
                     </div>
                 </div>
             </div>
+            <Footer/>
             </Layout>
         );
     }

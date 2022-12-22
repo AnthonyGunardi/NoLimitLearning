@@ -5,6 +5,7 @@ import Game from './Components/Game';
 import Difficulties from './Components/Difficulties'
 import './Challenge.css';
 import landScape from './bull-bg.jpg';
+import Footer from '../../components/UI/Footer/Footer';
 
 const AppWrapper = styled.div`
   padding: 1rem;
@@ -56,6 +57,7 @@ class App extends Component {
 
   render() {
     return (
+      <>
       <AppWrapper>
         <AppHeader>Guess The Number</AppHeader>
         <Difficulties 
@@ -71,6 +73,8 @@ class App extends Component {
           numberOfAttemptsSelected = { this.state.numberOfAttemptsSelected } 
         />
       </AppWrapper>
+      <Footer/>
+      </>
     );
   }
 }
