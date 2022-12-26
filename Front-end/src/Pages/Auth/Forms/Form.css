@@ -29,7 +29,7 @@
   width: 100%;
   text-align: center;
   color: #fcfcfc;
-  background: #2a72d0 0% 0% no-repeat padding-box;
+  background: #26A69A 0% 0% no-repeat padding-box;
   border-radius: 8px;
   font-size: 25px;
   margin: 5px;
@@ -90,6 +90,14 @@
 .login-form {
   margin-top: 40px;
 }
+@media (max-width: 700px) {
+  .login-form {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .login-form-otp {
   margin-top: 100px;
 }
