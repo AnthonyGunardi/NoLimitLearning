@@ -165,7 +165,9 @@ formHandler = (event)=> {
                 localStorage.setItem('userId',response.data.userId);
                 localStorage.setItem('userName',response.data.username);
                 this.setState({loading:false})
-                this.setState({redirect:'/HomePage'})})
+                // this.setState({redirect:'/HomePage'})
+                window.location.replace('https://www.google.com')
+            })
              
       
         .catch(error=>{console.log(error.response); 
