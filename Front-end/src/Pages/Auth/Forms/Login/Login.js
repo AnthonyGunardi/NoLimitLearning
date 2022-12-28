@@ -228,9 +228,11 @@ render() {
                     changed={(event)=> this.inputchangeHandler(event,x.id)}/>
                 ))
             }
+            <div className='center'>
             <Link to="/forgotpasswordemail"> 
             <p className="forgot-password"  > Forgot Password?</p></Link>
             {LoginSumbitButton}
+            </div>
            <p className="account-login"><Link to='/signup'>  New User? Sign up</Link></p>
          
                

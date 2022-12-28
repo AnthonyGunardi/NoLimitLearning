@@ -257,7 +257,7 @@ inputBlurHandler = (event,inputIdentifier)=> {
                 config:this.state.Form[key]
             });
         };
-        let SigninSumbitButton= <SumbitButton className={"Sumbit-btn"} Label={"Create Account"}/>;
+        let SigninSumbitButton= <SumbitButton className={"Sumbit-btn"} Label={"Register"}/>;
    
         if(this.state.loading){
             SigninSumbitButton= <SpinnerButton spinnerclass={"Sumbit-btn"}/>;
@@ -281,8 +281,9 @@ inputBlurHandler = (event,inputIdentifier)=> {
                         changed={(event)=> this.inputchangeHandler(event,x.id)}/>
                     ))
                 }
-               
+                <div className='center'>
                 {SigninSumbitButton}
+                </div>
               <p className="account-login"> Already have an account?  <Link to="/login"> 
               Login</Link></p>
                  

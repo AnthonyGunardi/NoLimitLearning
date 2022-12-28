@@ -16,13 +16,13 @@ const Footer =(props)=>{
             <li >
                 <a href="http://localhost:3000/leaderboard" >      
                     <i class="mdi mdi-account-group"></i>
-                    <span>Klasemen</span>
+                    <span>Leaderboard</span>
                 </a>    
             </li>
             <li >
-                <a href="sub-home.html" >      
+                <a href="http://localhost:3000/menu" >      
                     <i class="mdi mdi-forum"></i>
-                    <span>Chating</span>
+                    <span>Chat</span>
                 </a>    
             </li>
         </ul>

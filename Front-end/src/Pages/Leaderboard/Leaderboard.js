@@ -25,7 +25,7 @@ import Footer from '../../components/UI/Footer/Footer';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-      backgroundColor: '#3f51b5',
+      backgroundColor: '#990000',
       color: theme.palette.common.white,
       fontSize: 20
     },
@@ -85,7 +85,7 @@ const Leaderboard = () => {
     return (
         <>
         <Grow in>
-            <Container maxWidth='xl'>
+            <Container maxWidth='xl' className={classes.container}>
                 <Grid className={classes.gridContainer} container justifyContent='space-between' alignItems='stretch' spacing={3}>
                     <Grid item xs={12} sm={6} md={9}>
                         <Typography variant="h4" align="center">LEADERBOARD</Typography>

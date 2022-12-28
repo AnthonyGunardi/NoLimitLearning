@@ -8,6 +8,9 @@ export default makeStyles((theme) => ({
     gap: '0.5rem',
     padding: '16px',
   },
+  container: {
+    height: '100vh'
+  },
   pagination: {
     borderRadius: 4,
     marginTop: '1rem',
