@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'http://localhost:8080' }); // 'http://localhost:5000'  'https://be-habit-learning.herokuapp.com/'
+const API = axios.create({ baseURL: 'http://localhost:6000' }); // 'http://localhost:5000'  'https://be-habit-learning.herokuapp.com/'
 API.interceptors.request.use((req) => {
     if(localStorage.getItem('profile')) {
         req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('profile')).token}`;

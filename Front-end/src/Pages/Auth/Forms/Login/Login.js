@@ -143,6 +143,11 @@ timeout = ()=> {
     temp.alertType=''
      this.setState({alert:temp,alertPressed:false}) 
 }
+postCrossDomainMessage = (msg)=> {
+    let win = document.getElementById('ifr').contentWindow;
+    win.postMessage(msg, "http://localhost:3000");
+}
+
 formHandler = (event)=> {
     event.preventDefault();
     this.setState({alertPressed:true})
@@ -157,16 +162,18 @@ formHandler = (event)=> {
         AuthService.login(formData)
         .then(response => {
           
-            console.log('Response:', response)
-                this.AlertError("Check Your Password", "danger");
+            // console.log('Response:', response)
+            // this.AlertError("Check Your Password", "danger");
   
                 localStorage.setItem('user',response.data.access_token);
                 localStorage.setItem('ref_token',response.data.referesh_token);
                 localStorage.setItem('userId',response.data.userId);
                 localStorage.setItem('userName',response.data.username);
+                let postMsg = {'userId': response.data.userId}; 
+                this.postCrossDomainMessage(postMsg);
                 this.setState({loading:false})
                 // this.setState({redirect:'/HomePage'})
-                window.location.replace('https://www.google.com')
+                window.location.replace('https://mictransformer.com/NoLimitLearning/ui-pages-home.html')
             })
              
       

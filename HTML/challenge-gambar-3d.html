@@ -615,7 +615,7 @@ Julingkan mata lalu lepas pandangan perlahan sampai pandangan seakan terkunci di
 
     <div class="row">
       <div class="">
-        <a class="waves-effect waves-light btn-large bg-primary ">Kirim Jawaban</a>
+        <a class="waves-effect waves-light btn-large bg-primary" onclick="getPoint()">Kirim Jawaban</a>
       </div>
     </div>
 
@@ -710,11 +710,51 @@ Julingkan mata lalu lepas pandangan perlahan sampai pandangan seakan terkunci di
   </ul>
 </div>
 
+<script>
+  let PERMITTED_DOMAIN = "http://localhost:3000";
 
+  window.addEventListener('message', function(event) {
+      if (event.origin === PERMITTED_DOMAIN) {
+          // let msg = JSON.parse(event.data);
+          // let msgKey = Object.keys(msg)[0];
+          if (event.data) {
+              localStorage.setItem("userId", event.data);
+          } else {
+              localStorage.removeItem("userId");
+          }
+      }
+  });
+</script>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+<script>
+  let answer = document.getElementById('textarea-prefix');
+  let userId = localStorage.getItem('userId');
 
+  function getPoint() {
+    if (answer.value == "jawaban") {
+    //   fetch(`http://localhost:6000/points/${userId}/50`, {
+    //   method: "POST",
+    //   mode: 'cors',
+    //   body: JSON.stringify({
+    //     message: "request to get point"
+    //   }),
+    //   headers:{          
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   }
+    // })
+    axios.put(`http://localhost:6000/points/${userId}/50`)
+      .then(res => {
+        alert('Selamat! Jawaban Anda Benar')
+        setTimeout(window.location.replace('https://mictransformer.com/NoLimitLearning/ui-pages-home.html'), 2000);
+      })
+      .catch(err => console.log(err))
+    }
 
+  }
+</script>
 
 
 

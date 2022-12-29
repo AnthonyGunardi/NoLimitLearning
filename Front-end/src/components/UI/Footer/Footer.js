@@ -8,7 +8,7 @@ const Footer =(props)=>{
       <div class="footer-menu circular">
         <ul>
             <li >
-                <a href="http://localhost:3000/menu" >      
+                <a href="https://mictransformer.com/NoLimitLearning/ui-pages-home.html" >      
                     <i class="mdi mdi-home"></i>
                     <span>Home</span>
                 </a>    
@@ -20,7 +20,7 @@ const Footer =(props)=>{
                 </a>    
             </li>
             <li >
-                <a href="http://localhost:3000/menu" >      
+                <a href="https://mictransformer.com/NoLimitLearning/ui-pages-home.html" >      
                     <i class="mdi mdi-forum"></i>
                     <span>Chat</span>
                 </a>    
