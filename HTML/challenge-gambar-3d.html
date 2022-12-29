@@ -514,7 +514,7 @@
   
   <div class="col-item col s12 ">
   
-            <h4 class="title ">Tebak, Apa Objek Tersembunyi di Gambar Abstrak Ini? </h4>
+            <h4 class="title ">Tebak Apa Objek Tersembunyi di Gambar Abstrak Ini? </h4>
              <!--    <div class="user-avatar mini">
     <div class="maillink status available">
       <img src="assets/images/user-31.jpg" alt="Rebeca Boult" title="Rebeca Boult" class="circle">
@@ -539,11 +539,11 @@
 
       
       
-                    <p >bagaimana cara menemukan objek tersembunyi di antara gambar stereogram? Bagi yang Anda penasaran, ada beberapa cara yang dapat Anda coba. Berikut cara-cara tersebut.<br>
+                    <p >Bagaimana cara menemukan objek tersembunyi di antara gambar stereogram? Bagi yang penasaran, ada beberapa cara yang dapat Anda coba. Berikut salah satu cara tersebut.<br>
 
-Jauh dekatkan gambar sehingga mata otomatis menjadi juling dan terkunci pada gambar objek tersembunyi.<br>
-Di beberapa gambar stereogram, disertakan dua titik panduan. Arahkan pandangan pada dua titik tersebut, kemudian julingkan mata hingga titik menjadi tiga. <br>Selanjutnya, secara perlahan alihkan pandangan pada gambar abstrak tersebut.<br>
-Julingkan mata lalu lepas pandangan perlahan sampai pandangan seakan terkunci di satu objek. <br><br>
+                      1. Letakkan 2 jari anda pada gambar stereogram/pada monitor<br>
+                      2. Arahkan mata kiri ke jari sebelah kiri, dan mata kanan ke jari sbelah kanan. <br>Selanjutnya, secara perlahan alihkan pandangan pada gambar abstrak tersebut.<br>
+                      3. Kaburkan pandangan sampai seolah-olah muncul jari tangan ketiga di tengah-tengahnya, atau sampai kedua tangan seolah-olah bersatu. lihatlah keindahan gambar 3D yang tampak. <br><br>
 
 
 
@@ -734,7 +734,7 @@ Julingkan mata lalu lepas pandangan perlahan sampai pandangan seakan terkunci di
 
   function getPoint() {
     if (answer.value == "jawaban") {
-    //   fetch(`http://localhost:6000/points/${userId}/50`, {
+    //   fetch(`http://localhost:5001/points/${userId}/50`, {
     //   method: "POST",
     //   mode: 'cors',
     //   body: JSON.stringify({
@@ -745,12 +745,17 @@ Julingkan mata lalu lepas pandangan perlahan sampai pandangan seakan terkunci di
     //     'Content-Type': 'application/json'
     //   }
     // })
-    axios.put(`http://localhost:6000/points/${userId}/50`)
+    axios.put(`http://localhost:5001/points/${userId}/50`)
       .then(res => {
-        alert('Selamat! Jawaban Anda Benar')
+        alert('Selamat! Jawaban Anda Benar');
+        document.getElementById('textarea-prefix').value = '';
         setTimeout(window.location.replace('https://mictransformer.com/NoLimitLearning/ui-pages-home.html'), 2000);
       })
       .catch(err => console.log(err))
+    } else {
+      alert('Jawaban Anda Salah');
+      document.getElementById('textarea-prefix').value = '';
+      
     }
 
   }

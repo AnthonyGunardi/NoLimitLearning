@@ -162,7 +162,7 @@ formHandler = (event)=> {
         AuthService.login(formData)
         .then(response => {
           
-            // console.log('Response:', response)
+            console.log('Response:', response)
             // this.AlertError("Check Your Password", "danger");
   
                 localStorage.setItem('user',response.data.access_token);
