@@ -14,7 +14,7 @@ const Footer =(props)=>{
                 </a>    
             </li>
             <li >
-                <a href="http://localhost:3000/leaderboard" >      
+                <a href="https://mit-nolimitlearning.web.app/leaderboard" >      
                     <i class="mdi mdi-account-group"></i>
                     <span>Leaderboard</span>
                 </a>    
