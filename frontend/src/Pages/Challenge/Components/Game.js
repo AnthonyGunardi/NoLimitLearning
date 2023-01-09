@@ -81,7 +81,7 @@ class Game extends Component {
         }
       });
       if (bulls === 3) {
-        axios.put(`http://anthonygunardi.com:5001/points/${userId}/50`)
+        axios.put(`https://anthonygunardi.com:5001/points/${userId}/50`)
         .then(
           this.setState({
             gameWon: true
