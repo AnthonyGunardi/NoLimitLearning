@@ -1,5 +1,5 @@
 const path = require('path');
-const http = require('http');
+const https = require('https');
 require('dotenv').config()
 const redis = require('redis');
 const mongoose = require('mongoose');
@@ -14,7 +14,13 @@ const userRoutes=require('./routes/user')
 // const {addRoom,getUser} = require('./chat');
 const MONGODB_URI =api_key.mongo;
 const app = express();
-const server = http.createServer(app);
+const options = {
+  key: fs.readFileSync('../../ssl/privateKey.pem'),
+  cert: fs.readFileSync('../../ssl/anthonygunardi_com_cert.pem'),
+};
+const server = https.createServer(options, app);
+const PORT = 5001;
+
 app.use(bodyParser.json()); 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/images',express.static(path.join(__dirname, 'images')));
@@ -38,8 +44,8 @@ if (process.env.NODE_ENV !== 'test') {
   mongoose
     .connect(MONGODB_URI,{ useUnifiedTopology: true,useNewUrlParser: true })
     .then(()=> {
-          server.listen(5001);
-          console.log("Server Started!")
+          server.listen(PORT);
+          console.log(`Server Started at port ${PORT}!`)
       })
     .catch(err => {
       console.log(err);
