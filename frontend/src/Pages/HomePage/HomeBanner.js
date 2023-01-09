@@ -2,17 +2,16 @@ import React,{Component} from "react";
 import {Link} from 'react-router-dom';
 import './CSS/HomeBanner.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import banner from './banner.jpg'
+
 class HomepageBanner extends Component{
     render(){
         let text=null;
         let Banner=null;
         if(this.props.img){
-             text = ( <p className="Banner-text">NO LIMIT LEARNING</p> );
-            }
-        if(this.props.img){
             Banner=( <div className="BannerSection">
                      <img className="BannerImage" 
-                     src={"https://png.pngtree.com/thumb_back/fw800/back_our/20190621/ourmid/pngtree-office-training-learning-banner-poster-background-image_182795.jpg"} alt="banner1"/>
+                     src={banner} alt="banner1"/>
                     </div>);
         }
         if(this.props.img === null){
