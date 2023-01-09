@@ -1,6 +1,6 @@
 import React from "react";
 import './CSS/Homepage.css';
-import InterestBanner from '../../assets/Images/RedBanner.png';
+import InterestBanner from '../../assets/Images/RedBanner.jpg';
 import {NavLink} from 'react-router-dom';
 const Recommendation =(props)=>{
     return(
