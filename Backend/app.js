@@ -30,6 +30,9 @@ app.use(teacherRoutes);
 app.use(homeRoutes);
 app.use(courseRoutes);
 app.use(userRoutes);
+app.get('/', (req,res) => {
+  res.send('Welcome to No Limit Learning API')
+});
 
 if (process.env.NODE_ENV !== 'test') {
   mongoose
