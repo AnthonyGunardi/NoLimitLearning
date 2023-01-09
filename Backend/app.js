@@ -1,6 +1,7 @@
+require('dotenv').config()
 const path = require('path');
 const https = require('https');
-require('dotenv').config()
+const fs = require('fs');
 const redis = require('redis');
 const mongoose = require('mongoose');
 const express = require('express');
